@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Survival Prediction</h2>
+            <h3>Passenger Class</h3>
+            <select name="Pclass" id="pclass" required="required">
+                <option value="Upper Class">Upper Class</option>
+                <option value="Middle Class">Middle Class</option>
+                <option value="Lower Class">Lower Class</option>
+            </select>
+
+            <h3>Gender</h3>
+            <select name="Sex" id="sex" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+            <h3>Age</h3><input id="age" name="Age" required="required">
+            
+            <h3>Siblings/Spouses on Board</h3><input id="sibsp" name="SibSp" required="required">
+            
+            <h3>Parents/Children on Board</h3><input id="parch" name="Parch" required="required">
+            
+            <h3>Fare(in Dollars)</h3><input id="fare" name="Fare" required="required">
+            
+            <h3>Embarkment Port(Port from which they boarded)</h3>
+            <select name="Embarked" id="port" required="required">
+                <option value="Southampton">Southampton</option>
+                <option value="Cherbourg">Cherbourg</option>
+                <option value="Queenstown">Queenstown</option>
+            </select>
+            
+            <h3>Title</h3>
+            <select name="Title" id="title" required="required">
+                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Master">Master</option>
+                <option value="Different">Different</option>
+            </select>
+            
+            <h3>Cabin</h3>
+            <select name="Cabin" id="cabin" required="required">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+           
+            <br><br><button id="sub" type="submit ">Will the Passenger Survive?</button>
+            <br>
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #pclass {
+            width: 148px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #pclass:hover {
+            background-color: coral;
+        }
+        
+        #sex {
+            width: 98px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sex:hover {
+            background-color: coral;
+        }
+        
+        #port {
+            width: 150px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #port:hover {
+            background-color: coral;
+        }
+        
+        #title {
+            width: 110px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #title:hover {
+            background-color: coral;
+        }
+        
+        #cabin {
+            width: 60px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #cabin:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #age {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #sibsp {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #parch {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fare {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
